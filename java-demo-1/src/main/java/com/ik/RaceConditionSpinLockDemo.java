@@ -1,9 +1,13 @@
+package com.ik;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class RaceConditionSpinLockDemo {
 
-  private static AtomicInteger count = new AtomicInteger(0); 
+  private static AtomicInteger count = new AtomicInteger(0);
   
 public static void main(String[] args) {
-    Runnable incrementCount  () -> {
+    Runnable incrementCount = () -> {
       for (int i = 0; i < 10000; i++) {
         count.incrementAndGet(); 
       }

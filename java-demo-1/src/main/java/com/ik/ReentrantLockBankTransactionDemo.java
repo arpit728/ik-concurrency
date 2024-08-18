@@ -1,4 +1,8 @@
+package com.ik;
+
 import java.util.concurrent.locks.ReentrantLock;
+
+import static com.ik.BankAccount.transfer;
 
 class BankAccount {
     private int balance = 0;

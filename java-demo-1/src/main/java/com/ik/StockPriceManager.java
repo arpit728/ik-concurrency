@@ -1,5 +1,25 @@
+package com.ik;
+
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
+
+class StockPrice {
+    private final double price;
+    private final long timestamp; // Timestamp in milliseconds
+
+    public StockPrice(double price, long timestamp) {
+        this.price = price;
+        this.timestamp = timestamp;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+}
 
 public class StockPriceManager {
     private final ConcurrentHashMap<String, StockPrice> stockPrices = new ConcurrentHashMap<>(); // Registry for stock symbols
